@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
-df = pd.read_csv("cleaning_beauty_datasets.csv")
+df = pd.read_csv("combined_all_things.csv")
 df.info()
 
 df['engagement_comments'] = (df['n_comments']/df['n_plays'])*100
@@ -20,7 +20,7 @@ df.info()
 
 df.head()
 
-x_comments = df.iloc[:,16:17]
+x_comments = df.iloc[:,17:18]
 print(x_comments)
 
 #elbow method
@@ -62,7 +62,7 @@ print(score)
 df['engagement_likes'] = (df['n_likes']/df['n_plays'])*100
 df.info()
 
-x_likes = df.iloc[:,17:18]
+x_likes = df.iloc[:,19:20]
 print(x_likes)
 
 #elbow method
@@ -104,7 +104,7 @@ print(score)
 df['engagement_shares'] = (df['n_shares']/df['n_plays'])*100
 df.info()
 
-x_shares = df.iloc[:,19:20]
+x_shares = df.iloc[:,21:22]
 print(x_shares)
 
 #elbow method
