@@ -13,12 +13,15 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 
 df = pd.read_csv("combined_all_things.csv")
+
+#There is a null value in the video description. I decided to change the value into -> no description
+df1 = df[df.isna().any(axis=1)]
+df['video_desc'].fillna("no description", inplace=True)
 df.info()
 
 df['engagement_comments'] = (df['n_comments']/df['n_plays'])*100
 df.info()
 
-df.head()
 
 x_comments = df.iloc[:,17:18]
 print(x_comments)
