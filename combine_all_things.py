@@ -11,8 +11,18 @@ appended_data = []
 for i in range(6):
     df_file = pd.read_csv(all_filenames[i])
     df_file['Category'] = i+1
+  
+    if ('#' in df_file['video_desc'].values):
+        df_file['hastag_exists'] = 'Yes'
+    else:
+        df_file['hastag_exists'] = 'No'
     appended_data.append(df_file)
 appended_data = pd.concat(appended_data, ignore_index=True)
+
+
+
+
+    
 
 
 appended_data.to_csv("combined_all_things2.csv", index=False)
