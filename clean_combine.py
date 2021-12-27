@@ -2,7 +2,7 @@ import os
 import glob
 import pandas as pd
 
-combined_profile = pd.read_csv("DATASETS/beauty_complete_dataset.csv")
+combined_profile = pd.read_csv("COMPLETE_DATASETS/beauty_complete_dataset.csv")
 
 combined_profile.info()
 
